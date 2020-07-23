@@ -1,5 +1,3 @@
-
-
 module.exports={
     name: 'pikachu',
     description: 'dumb copypasta',
