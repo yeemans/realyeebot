@@ -1,5 +1,3 @@
-const { Message } = require("discord.js");
-const { count } = require("console");
 
 module.exports={
     name: 'hangman',
