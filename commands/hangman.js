@@ -1,4 +1,5 @@
 const { Message } = require("discord.js");
+const { count } = require("console");
 
 module.exports={
     name: 'hangman',
@@ -14,9 +15,19 @@ module.exports={
             underscores += '_';
         } 
         while (mistakes > 0) {
-            mistakes -= 1; 
-            message.channel.send('' + mistakes);
+            message.channel.send("Guess a letter."); 
+            //check if the letter is in the word
+            for (var b = 0; b < word.length; b++) {
+                if (word[b] == message.content) {
+                    underscores[b] = word[b];
+                }
+            }
+            if (word.includes(message.content) == false || message.content.length != 1) {
+                mistakes += 1;
+            }
+            message.channel.send('' + word);
+            message.channel.send('' + underscores);
         }
-        message.channel.send('' + word);
+
     }
 }
