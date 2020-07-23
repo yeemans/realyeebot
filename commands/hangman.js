@@ -22,6 +22,10 @@ module.exports={
                     underscores[b] = word[b];
                 }
             }
+            if (word == underscores) {
+                message.channel.send("you won");
+                break;
+            }
             if (word.includes(message.content) == false || message.content.length != 1) {
                 mistakes -= 1;
             }
