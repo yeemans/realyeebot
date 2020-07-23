@@ -46,10 +46,6 @@ client.on('message', message => {
         return;
     }
 
-    if (message.content.includes('yee')) {
-        message.channel.send('Y E E E E E E E E'); 
-        return;
-    }
     
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -62,6 +58,7 @@ client.on('message', message => {
     }
     else if(command === 'yee'){
         client.commands.get('yee').execute(message, args);
+        return;
     }
     else if (command ==='wa') { 
         client.commands.get('pa').execute(message, args);
@@ -71,6 +68,10 @@ client.on('message', message => {
     }
     else if (command ==='pikachu') {
         client.commands.get('pikachu').execute(message, args);
+    }
+    if (message.content.includes('yee')) {
+        message.channel.send('Y E E E E E E E E'); 
+        return;
     }
     
 });
