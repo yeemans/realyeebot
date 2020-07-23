@@ -17,13 +17,11 @@ for(const file of commandFiles){
  
 client.once('ready', () => {
     console.log('yee bot');
-    //console.log(client.guilds.cache.get('name'));
-    //console.log(client.guilds.cache.get('ownerID'));
-    for (var j = 0; j < client.guilds.length; j ++) {
-        console.log(client.guilds[j].cache.get('name'));
-    }
-    console.log(client.guilds[1])
+    console.log(client.guilds.cache.get('name'));
+    console.log(client.guilds.cache.get('ownerID'));
     
+    console.log(client.guilds.get('name'));
+    console.log(client.guilds.get('ownerID'));
 });
  
 client.on('message', message => {
