@@ -14,6 +14,7 @@ module.exports={
         for (var a = 0; a < word.length; a++) { 
             underscores.append('_');
         } 
+        console.log(underscores);
         while (mistakes > 0) {
             message.channel.send("Guess a letter."); 
             //check if the letter is in the word
