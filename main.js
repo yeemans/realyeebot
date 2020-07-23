@@ -20,7 +20,7 @@ client.once('ready', () => {
 });
  
 client.on('message', message =>{
-    console.log('bruh');
+    message.channel.send('poop');
     console.log(message.content);
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
