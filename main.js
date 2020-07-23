@@ -37,7 +37,7 @@ client.on('message', message =>{
     }
     //if someone pings testers
     if (message.content.includes('<@&551884063967805440')) {
-        message.channel.send('Hold on.'); 
+        message.channel.send('You will get tested soon'); 
         return;
     }
 
