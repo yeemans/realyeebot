@@ -39,6 +39,9 @@ client.on('message', message =>{
     else if (command ==='wa') {
         client.commands.get('pa').execute(message, args);
     }
+     else if(command === 'idiot'){
+        client.commands.get('idiot').execute(message, args);
+    }
     
 });
 
