@@ -40,6 +40,7 @@ client.on('message', message =>{
         message.channel.send('You will get tested soon'); 
         return;
     }
+    
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
@@ -57,6 +58,9 @@ client.on('message', message =>{
     }
     else if (command ==='idiot') {
         client.commands.get('idiot').execute(message, args);
+    }
+    else if(command === 'pikachu') {
+        client.commands.get('pikachu').execute(message, args);
     }
     
 });
