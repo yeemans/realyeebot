@@ -46,7 +46,10 @@ client.on('message', message => {
         return;
     }
 
-    
+    if (message.content.includes('yee') && !(message.content.includes('-'))) {
+        message.channel.send('Y E E E E E E E E'); 
+        return;
+    }
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
@@ -69,10 +72,7 @@ client.on('message', message => {
     else if (command ==='pikachu') {
         client.commands.get('pikachu').execute(message, args);
     }
-    if (message.content.includes('yee')) {
-        message.channel.send('Y E E E E E E E E'); 
-        return;
-    }
+
     
 });
 
