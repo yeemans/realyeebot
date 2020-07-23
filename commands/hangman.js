@@ -33,6 +33,7 @@ module.exports={
             }
             message.channel.send('' + word);
             message.channel.send('' + underscores);
+            console.log(underscores);
         }
 
     }
