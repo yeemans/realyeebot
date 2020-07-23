@@ -26,15 +26,15 @@ client.on('message', message =>{
         client.commands.get('shutup').execute(message, args);
     }
     
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
     if (command.includes('bruh')) {
         message.channel.send('bruh');
     }
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-    
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
     }
