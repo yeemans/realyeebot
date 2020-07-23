@@ -47,6 +47,11 @@ client.on('message', message => {
         return;
     }
 
+    if (message.content.includes('fuck') || message.content.includes('shit') || 
+    message.content.includes('bitch')) {
+        message.channel.send('Please do not swear');
+    }
+
     if (message.content.includes('yee') && !(message.content.includes('-'))) {
         message.channel.send('Y E E E E E E E E'); 
         return;
