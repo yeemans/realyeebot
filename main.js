@@ -34,7 +34,7 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
     
 
-    if (command.contains('bruh')) {
+    if (command.includes('bruh')) {
         message.channel.send('bruh');
     }
     if(command === 'ping'){
