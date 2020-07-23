@@ -12,7 +12,7 @@ module.exports={
         var word = dictionary[Math.floor(Math.random() * dictionary.length)];
         var underscores = '';
         for (var a = 0; a < word.length; a++) { 
-            underscores += '_';
+            underscores += 'a';
         } 
         console.log(underscores);
         while (mistakes > 0) {
