@@ -10,30 +10,24 @@ module.exports={
         var mistakes = 6; //6 mistakes and you lose 
         var dictionary = text.split("\n");
         var word = dictionary[Math.floor(Math.random() * dictionary.length)];
-        var underscores = '';
-        for (var a = 0; a < word.length; a++) { 
-            underscores += 'a';
-        } 
-        console.log(underscores);
+        var copy = word;
         while (mistakes > 0) {
             message.channel.send("Guess a letter."); 
             //check if the letter is in the word
-            for (var b = 0; b < word.length; b++) {
-
-                if (word[b] == message.content) {
-                    underscores[b] = word[b];
+            if (word.includes(message.content) && message.content.length == 1) {
+                for (i = 0; i < count(word); i++) {
+                    if (copy[i] == message.content) {
+                        copy[i] = message.content;
+                    }
                 }
             }
-            if (word == underscores) {
-                message.channel.send("you won");
-                break;
-            }
-            if (word.includes(message.content) == false || message.content.length != 1) {
+
+            else {
                 mistakes -= 1;
             }
             message.channel.send('' + word);
+            message.channel.send('' + copy);
             message.channel.send('' + underscores);
-            console.log(underscores);
         }
 
     }
