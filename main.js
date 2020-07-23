@@ -31,7 +31,7 @@ client.on('message', message =>{
     
     
 
-    if (command.includes('bruh') || message.content.includes('bruh')) {
+    if (message.content.includes('bruh') && message.author.bot == false) {
         message.channel.send('bruh');
         return;
     }
