@@ -29,7 +29,7 @@ module.exports={
                 mistakes -= 1;
             }
             message.channel.send('' + word);
-            message.channel.send('' + copy);
+            
             message.channel.send('' + underscores);
         }
 
