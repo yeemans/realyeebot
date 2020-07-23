@@ -20,6 +20,8 @@ client.once('ready', () => {
 });
  
 client.on('message', message =>{
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
     console.log(message.content);
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
@@ -27,8 +29,7 @@ client.on('message', message =>{
     }
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+
  
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
