@@ -12,8 +12,8 @@ module.exports={
         for (var a = 0; a < word.length; a++) {
             underscores += 'a';
         }
-        while (mistakes > 0) {
-            message.channel.send("Guess a letter."); 
+        
+        function game() {
             //check if the letter is in the word
             if (word.includes(message.content) && message.content.length == 1) {
                 for (var i = 0; i < count(word); i++) {
@@ -26,9 +26,13 @@ module.exports={
             else {
                 mistakes -= 1;
             }
+
+            if (mistakes != 0 && underscores != word) {
+                game();
+            }
             message.channel.send('' + word);
-            
             message.channel.send('' + underscores);
+            message.channel.send("guess a letter");
         }
 
     }
