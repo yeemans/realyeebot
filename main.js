@@ -21,7 +21,10 @@ client.once('ready', () => {
  
 client.on('message', message =>{
     console.log('bruh');
-
+    if (message.content == 'hi' || message.content == 'hello' && 
+    message.author.bot == false) {
+        client.commands.get('shutup').execute(message, args);
+    }
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -36,14 +39,13 @@ client.on('message', message =>{
     else if(command === 'yee'){
         client.commands.get('yee').execute(message, args);
     }
-    else if (command ==='wa') {
+    else if (command ==='wa') { 
         client.commands.get('pa').execute(message, args);
     }
-     else if(command === 'idiot'){
+    else if (command ==='idiot') {
         client.commands.get('idiot').execute(message, args);
     }
     
 });
 
-client.destroy();
 client.login(process.env.token);
