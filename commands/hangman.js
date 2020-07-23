@@ -26,14 +26,13 @@ module.exports={
             else {
                 mistakes -= 1;
             }
-
-            if (mistakes != 0 && underscores != word) {
-                game();
-            }
             message.channel.send('' + word);
             message.channel.send('' + underscores);
             message.channel.send("guess a letter");
+            if (mistakes != 0 && underscores != word) {
+                game();
+            }
         }
-
+        game();
     }
 }
