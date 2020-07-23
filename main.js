@@ -21,7 +21,8 @@ client.once('ready', () => {
  
 client.on('message', message =>{
     console.log('bruh');
-    if (message.content == 'hi' || message.content == 'hello' && 
+    console.log(message.content);
+    if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
         client.commands.get('shutup').execute(message, args);
     }
