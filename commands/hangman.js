@@ -22,11 +22,12 @@ module.exports={
                     }
                 }
             }
-
+            
             else {
                 mistakes -= 1;
             }
             message.channel.send('' + word);
+            underscores[2] = '3'; //testing
             message.channel.send('' + underscores);
             message.channel.send("guess a letter");
             if (mistakes != 0 && underscores != word) {
