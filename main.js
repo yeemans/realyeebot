@@ -21,7 +21,7 @@ client.once('ready', () => {
  
 client.on('message', message =>{
     message.channel.send('poop');
-    message = message.toLowerCase();
+    message.content = message.content.toLowerCase();
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
         client.commands.get('shutup').execute(message, args);
