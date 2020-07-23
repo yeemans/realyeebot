@@ -45,6 +45,11 @@ client.on('message', message => {
         message.channel.send('Nobody uses this channel');
         return;
     }
+
+    if (message.content.includes('yee')) {
+        message.channel.send('Y E E E E E E E E'); 
+        return;
+    }
     
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
