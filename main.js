@@ -17,8 +17,9 @@ for(const file of commandFiles){
  
 client.once('ready', () => {
     console.log('yee bot');
-    console.log(client.guilds.cache.get('name'));
-    console.log(client.guilds.cache.get('ownerID'));
+    //console.log(client.guilds.cache.get('name'));
+    //console.log(client.guilds.cache.get('ownerID'));
+    console.log(client.guilds);
 });
  
 client.on('message', message => {
