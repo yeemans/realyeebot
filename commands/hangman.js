@@ -10,9 +10,9 @@ module.exports={
         var mistakes = 6; //6 mistakes and you lose 
         var dictionary = text.split("\n");
         var word = dictionary[Math.floor(Math.random() * dictionary.length)];
-        var underscores = [];
+        var underscores = '';
         for (var a = 0; a < word.length; a++) { 
-            underscores.push('_');
+            underscores += '_';
         } 
         console.log(underscores);
         while (mistakes > 0) {
