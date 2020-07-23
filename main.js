@@ -22,6 +22,7 @@ client.once('ready', () => {
     for (var j = 0; j < client.guilds.length; j ++) {
         console.log(client.guilds[j].cache.get('name'));
     }
+    console.log(client.guilds[1])
     
 });
  
