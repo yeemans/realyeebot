@@ -23,14 +23,15 @@ client.on('message', message =>{
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    
+
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
         client.commands.get('shutup').execute(message, args);
     }
     
+    
 
-    if (command.includes('bruh')) {
+    if (command.includes('bruh') || message.content.includes('bruh')) {
         message.channel.send('bruh');
     }
 
