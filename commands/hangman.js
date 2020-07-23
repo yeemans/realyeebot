@@ -8,6 +8,6 @@ module.exports={
         var text = fs.readFileSync("./commands/dictionary.txt") + '';
         var dictionary = text.split("\n");
         var word = dictionary[Math.floor(Math.random() * dictionary.length)];
-        message.channel.send(`` ${word});
+        message.channel.send(` ${word}`);
     }
 }
