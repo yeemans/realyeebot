@@ -68,6 +68,7 @@ client.on('message', message =>{
         client.commands.get('pikachu').execute(message, args);
     }
     else if(command === 'hangman') {
+        message.channel.send("hangman running");
         client.commands.get('hangman').execute();
     }
     
