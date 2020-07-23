@@ -39,6 +39,13 @@ client.on('message', message => {
         message.channel.send('bruh');
         return;
     }
+
+    if (message.content.includes('lmao') && message.author.bot == false) { 
+        for (var f = 0; f < 10; f++) {
+            message.channel.send('lmaooooooooo');
+        }
+        return;
+    }
     //if someone pings testers
     if (message.content.includes('<@&551884063967805440')) {
         message.channel.send('You will get tested soon'); 
