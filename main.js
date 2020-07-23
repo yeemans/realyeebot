@@ -67,6 +67,9 @@ client.on('message', message =>{
     else if (command ==='pikachu') {
         client.commands.get('pikachu').execute(message, args);
     }
+    else if(command === 'hangman') {
+        client.commands.get('hangman').execute();
+    }
     
 });
 
