@@ -19,7 +19,7 @@ client.once('ready', () => {
     console.log('yee bot');
 });
  
-client.on('message', message =>{
+client.on('message', message => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -68,8 +68,7 @@ client.on('message', message =>{
         client.commands.get('pikachu').execute(message, args);
     }
     else if(command === 'hangman') {
-        message.channel.send("hangman running");
-        client.commands.get('hangman').execute();
+        client.commands.get('hangman').execute(message, args);
     }
     
 });
