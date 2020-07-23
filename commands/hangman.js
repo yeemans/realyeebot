@@ -10,14 +10,17 @@ module.exports={
         var mistakes = 6; //6 mistakes and you lose 
         var dictionary = text.split("\n");
         var word = dictionary[Math.floor(Math.random() * dictionary.length)];
-        var copy = word;
+        var underscores = '';
+        for (var a = 0; a < word.length; a++) {
+            underscores += 'a';
+        }
         while (mistakes > 0) {
             message.channel.send("Guess a letter."); 
             //check if the letter is in the word
             if (word.includes(message.content) && message.content.length == 1) {
-                for (i = 0; i < count(word); i++) {
-                    if (copy[i] == message.content) {
-                        copy[i] = message.content;
+                for (var i = 0; i < count(word); i++) {
+                    if (word[i] == message.content) {
+                        underscores[i] = message.content;
                     }
                 }
             }
