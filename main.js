@@ -40,6 +40,11 @@ client.on('message', message =>{
         message.channel.send('You will get tested soon'); 
         return;
     }
+
+    if (message.content.includes('@&552131262622466048')) {
+        message.channel.send('Nobody uses this channel');
+        return;
+    }
     
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
