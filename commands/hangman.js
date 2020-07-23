@@ -23,7 +23,7 @@ module.exports={
                 }
             }
             if (word.includes(message.content) == false || message.content.length != 1) {
-                mistakes += 1;
+                mistakes -= 1;
             }
             message.channel.send('' + word);
             message.channel.send('' + underscores);
