@@ -27,12 +27,17 @@ client.on('message', message =>{
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
         client.commands.get('shutup').execute(message, args);
+        return;
     }
-    
     
 
     if (message.content.includes('bruh') && message.author.bot == false) {
         message.channel.send('bruh');
+        return;
+    }
+    //if someone pings testers
+    if (message.content.includes('<@&551884063967805440')) {
+        message.channel.send('Hold on.'); 
         return;
     }
 
