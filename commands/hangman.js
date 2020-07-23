@@ -10,14 +10,15 @@ module.exports={
         var mistakes = 6; //6 mistakes and you lose 
         var dictionary = text.split("\n");
         var word = dictionary[Math.floor(Math.random() * dictionary.length)];
-        var underscores = '';
+        var underscores = [];
         for (var a = 0; a < word.length; a++) { 
-            underscores += '_';
+            underscores.append('_');
         } 
         while (mistakes > 0) {
             message.channel.send("Guess a letter."); 
             //check if the letter is in the word
             for (var b = 0; b < word.length; b++) {
+
                 if (word[b] == message.content) {
                     underscores[b] = word[b];
                 }
