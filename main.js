@@ -60,9 +60,11 @@ client.on('message', message => {
     }
 
     if (message.content.includes('fuck') || message.content.includes('shit') || 
-    message.content.includes('bitch') && !(message.author.bot)) {
-        message.channel.send('Please do not swear');
-        return;
+    message.content.includes('bitch')) {
+        if (!(message.author.bot)) {
+            message.channel.send('Please do not swear');
+            return;
+        }
     }
 
     if (message.content.includes('yee') && !(message.content.includes('-'))) {
