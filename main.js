@@ -123,8 +123,8 @@ client.on('message', async (message) => {
         if (!(hater)) {
             await message.guild.roles.create({ 
                 data: {
-                    name: "YeeBotHater", 
-                    color: "#00ff00", 
+                    name: "newColor", 
+                    color: "" + args[0], 
                     permissions:[] 
                 }
             }) 
