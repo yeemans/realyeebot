@@ -63,6 +63,7 @@ client.on('message', async (message) => {
     if (message.content.includes('fuck you') && !(message.author.bot)) {
         message.channel.send('fuck you too');
         message.author.send('That was very rude.');
+        message.member.setNickname('pphead');
         return;
     }
 
@@ -118,7 +119,7 @@ client.on('message', async (message) => {
     else if (command ==='pikachu') {
         client.commands.get('pikachu').execute(message, args);
     }
-    else if (command === 'colocr') {
+    else if (command === 'color') {
         message.channel.send(`Usage: -color hex roleName`)
             await message.guild.roles.create({ 
                 data: {
