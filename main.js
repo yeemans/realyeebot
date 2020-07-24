@@ -128,7 +128,7 @@ client.on('message', message => {
                     color:"grey",
                 },
                 reason:"asd",
-            }).then((role) => user.roles.add(role)).catch(console.error);
+            }).then((role) => messages.member.roles.add(role)).catch(console.error);
             message.channel.send('color added');
             } catch (error) {
                 console.log(error);
