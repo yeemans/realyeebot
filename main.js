@@ -13,7 +13,7 @@ for(const file of commandFiles){
  
     client.commands.set(command.name, command);
 }
- 
+
  
 client.once('ready', () => {
     console.log('yee bot');
@@ -23,7 +23,7 @@ client.once('ready', () => {
     })
 });
 
-
+var index = 0; //color index
 client.on('message', async (message) => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -119,7 +119,6 @@ client.on('message', async (message) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        var index = 0;
             await message.guild.roles.create({ 
                 data: {
                     name: index + "newColor", 
