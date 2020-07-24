@@ -32,7 +32,7 @@ client.on('message', message => {
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
         client.commands.get('shutup').execute(message, args);
-        return; 
+        return;
     }
     
 
@@ -81,7 +81,7 @@ client.on('message', message => {
     }
 
     if (message.content.includes('gay') && !(message.author.bot)) {
-        message.channsel.send('We do not tolerate homophobic slurs in this server');
+        message.channel.send(`We do not tolerate homophobic slurs in this server <@${message.author.id}>`);
     }
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
