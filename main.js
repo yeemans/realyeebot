@@ -82,6 +82,14 @@ client.on('message', message => {
 
     if (message.content.includes('gay') && !(message.author.bot)) {
         message.channel.send(`We do not tolerate homophobic slurs in this server <@${message.author.id}>`);
+        return;
+    }
+
+    if (message.content.includes('pp') || message.content.includes('cock') || 
+    message.content.includes('penis')) {
+        if (!(message.author.bot)) {
+            message.channel.send(`Penis <@${message.author.id}`);
+        }
     }
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
