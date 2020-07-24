@@ -119,15 +119,16 @@ client.on('message', async (message) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
+        message.channel.send(`Usage: -color hex roleName`)
             await message.guild.roles.create({ 
                 data: {
-                    name: index + "newColor", 
+                    name: args[1], 
                     color: "" + args[0], 
                     permissions:[] 
                 }
             }) 
         
-        color = message.guild.roles.cache.find(r => r.name === index + "newColor");
+        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
         color.setPosition(0);
         message.member.roles.add(color);
         index += 1;
