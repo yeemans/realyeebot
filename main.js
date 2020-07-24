@@ -22,7 +22,7 @@ client.once('ready', () => {
         console.log(guild.ownerID);
     })
 });
-client.on(guildMemberAdd, memeber => {
+client.on(guildMemberAdd, member => {
     let guild = member.guild; 
     guild.defaultChannel.sendMessage('Welcome' + member.user + ', type -yee to get into this crew');
 })
