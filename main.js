@@ -70,7 +70,7 @@ client.on('message', message => {
     message.content.includes('bitch')) {
         if (!(message.author.bot)) {
             message.channel.send(`Please do not swear <@${message.author.id}>`);
-            message.author.send('If you swear again im gonna tell on you');
+            message.author.send('If you swear again im gonna ban you');
             return;
         }
     }
