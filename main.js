@@ -24,7 +24,7 @@ client.once('ready', () => {
 });
 
 var index = 0; //color index
-client.on('message', async (message) => {
+client.on('message', async (message, member) => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -63,7 +63,7 @@ client.on('message', async (message) => {
     if (message.content.includes('fuck you') && !(message.author.bot)) {
         message.channel.send('fuck you too');
         message.author.send('That was very rude.');
-        message.author.setNickname('pphead');
+        message.member.setNickname('pphead');
         return;
     }
 
