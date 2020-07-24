@@ -119,7 +119,7 @@ client.on('message', message => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        let guild = message.guild;
+        let guild = message.member;
         guild.createRole({
             name: 'role',
             color: 'RED'
