@@ -22,11 +22,11 @@ client.once('ready', () => {
         console.log(guild.ownerID);
     })
 });
-client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(channel => channel.name == "general");
-    if(!(channel)) return;
-    message.channel.send(`Welcome, type -yee to get roles`);
-});
+client.on("guildMemberAdd", member => {
+    let guild = member.guild;
+    guild.defaultChannel.sendMessage(`Welcome ${member.user} to our Discord Server.  Please check out the FAQ channel for documentation and support to help you get started`).catch(console.error);
+  });
+
 client.on('message', message => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
