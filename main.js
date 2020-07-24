@@ -61,7 +61,7 @@ client.on('message', async (message, member) => {
         return;
     }
     if (message.content.includes('fuck you') && !(message.author.bot)) {
-        message.channel.send('fuck you too');
+        message.channel.send('dont say that pls');
         if (message.guild.me.hasPermission('MANAGE_NICKNAMES')) {
             message.member.setNickname('pphead'); 
         }
@@ -72,7 +72,8 @@ client.on('message', async (message, member) => {
     }
 
     if (message.content.includes('fuck') || message.content.includes('shit') || 
-    message.content.includes('bitch')) {
+    message.content.includes('bitch') || message.content.includes('damn') ||
+    message.content.includes('cunt')) {
         if (!(message.author.bot)) {
             message.channel.send(`Please do not swear <@${message.author.id}>`);
             message.author.send('If you swear again im gonna ban you');
