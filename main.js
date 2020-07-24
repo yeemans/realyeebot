@@ -24,7 +24,7 @@ client.once('ready', () => {
 });
 
 
-client.on('message', message => {
+client.on('message', async (message) => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -119,7 +119,6 @@ client.on('message', message => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        
         await message.guild.roles.create({ 
             data: {
                 name: "Muted", 
