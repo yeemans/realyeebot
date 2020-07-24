@@ -121,7 +121,6 @@ client.on('message', message => {
     else if (command === 'color') {
         
         async function role(message, user, guild){
-            let guild = message.guild;
             guild.roles.create(
                 data: {
                     name: "red";
