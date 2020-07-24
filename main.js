@@ -38,7 +38,9 @@ client.on('message', message => {
 
     if (message.content.includes('bruh') && message.author.bot == false) {
         message.channel.send('bruh');
-        if(!msg.author.bot) msg.author.send("bruh " + msg.author.id)
+        if (!(message.author.bot)) {
+            msg.author.send("bruh " + message.author.id);
+        }
         return;
     }
 
