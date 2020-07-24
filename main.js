@@ -62,12 +62,11 @@ client.on('message', async (message, member) => {
     }
     if (message.content.includes('fuck you') && !(message.author.bot)) {
         message.channel.send('fuck you too');
-        message.author.send('That was very rude.');
-        if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) {
-            message.author.send('That was very rude.');
+        if (message.guild.me.hasPermission('MANAGE_NICKNAMES')) {
+            message.member.setNickname('pphead'); 
         }
         else  {
-            message.member.setNickname('pphead');
+            message.author.send('very rude');
         }
         return;
     }
