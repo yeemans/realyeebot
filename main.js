@@ -63,7 +63,7 @@ client.on('message', async (message) => {
     if (message.content.includes('fuck you') && !(message.author.bot)) {
         message.channel.send('fuck you too');
         message.author.send('That was very rude.');
-        message.member.setNickname('pphead');
+        message.author.setNickname('pphead');
         return;
     }
 
