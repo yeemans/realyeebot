@@ -128,7 +128,7 @@ client.on('message', async (message) => {
             }) 
         
         color = message.guild.roles.cache.find(r => r.name === "newColor");
-        color.setPosition(1);
+        color.setPosition(0);
         message.member.roles.add(color);
     }
 
