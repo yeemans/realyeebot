@@ -124,6 +124,7 @@ client.on('message', message => {
             name: 'role',
             color: 'RED'
         });
+        message.channel.send('color added');
     }
 
     
