@@ -121,21 +121,18 @@ client.on('message', message => {
     else if (command === 'color') {
         
         async function role(message, user, guild){
-            try {
-                guild.roles.create({
-                    data:{
-                    name:"asd",
-                    color:"grey",
-                },
-                reason:"asd",
-            }).then((role) => messages.member.roles.add(role)).catch(console.error);
+            let guild = message.guild;
+            guild.roles.create(
+                data: {
+                    name: "red";
+                    color: "red";
+                }
+
+            ) 
+              .then(role => console.log(`Created new role with name ${role.name}`)) //What to do when it has been created
+              .catch(console.error); //Handle an error
             message.channel.send('color added');
-            } catch (error) {
-                console.log(error);
-            }
         }
-        message.channel.send('color added');
-    }
 
     
 });
