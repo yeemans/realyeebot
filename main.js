@@ -25,8 +25,7 @@ client.once('ready', () => {
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(channel => channel.name == "general");
     if(!(channel)) return;
-    message.channel.send(`Welcome ${member}, type -yee to get roles`);
-    member.guild.channels.get('channelID').send("Welcome"); 
+    message.channel.send(`Welcome, type -yee to get roles`);
 });
 client.on('message', message => {
     message.content = message.content.toLowerCase();
