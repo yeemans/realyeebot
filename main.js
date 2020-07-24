@@ -128,11 +128,11 @@ client.on('message', async (message) => {
                 }
             }) 
         
-        var color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(1)
+        var set_role = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+        set_role.setPosition(1)
         .then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);color.setPosition(0);
-        message.member.roles.add(color);
+        message.member.roles.add(set_role);
        
 
 
