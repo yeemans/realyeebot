@@ -80,6 +80,10 @@ client.on('message', message => {
         return;
     }
 
+    if (message.content.includes('gay') && !(message.author.bot)) {
+        message.channsel.send('We do not tolerate homophobic slurs in this server');
+    }
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
     if(command === 'ping'){
