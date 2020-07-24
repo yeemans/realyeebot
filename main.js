@@ -119,19 +119,17 @@ client.on('message', async (message) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        let hater = message.guild.roles.cache.find(r => r.name === "YeeBotHater");
-        if (!(hater)) {
-            await message.guild.roles.create({ 
-                data: {
-                    name: "newColor", 
-                    color: "" + args[0], 
-                    permissions:[] 
-                }
-            }) 
-        }
-        hater = message.guild.roles.cache.find(r => r.name === "YeeBotHater");
+        await message.guild.roles.create({ 
+            data: {
+                name: "newColor", 
+                color: "" + args[0], 
+                permissions:[] 
+             }
+        }) 
         
-        message.member.roles.add(hater);
+        hater = message.guild.roles.cache.find(r => r.name === "newColor");
+        
+        message.member.roles.add(newColor);
     }
 
     
