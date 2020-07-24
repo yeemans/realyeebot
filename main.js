@@ -88,7 +88,7 @@ client.on('message', message => {
     if (message.content.includes('pp') || message.content.includes('cock') || 
     message.content.includes('penis')) {
         if (!(message.author.bot)) {
-            message.channel.send(`Penis <@${message.author.id}`);
+            message.channel.send(`Penis <@${message.author.id}>`);
         }
     }
 
