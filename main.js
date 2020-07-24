@@ -62,13 +62,15 @@ client.on('message', message => {
     }
     if (message.content.includes('fuck you') && !(message.author.bot)) {
         message.channel.send('fuck you too');
+        message.author.send('That was very rude.');
         return;
     }
 
     if (message.content.includes('fuck') || message.content.includes('shit') || 
     message.content.includes('bitch')) {
         if (!(message.author.bot)) {
-            message.channel.send(`Please do not swear<@${message.author.id}>`);
+            message.channel.send(`Please do not swear <@${message.author.id}>`);
+            message.author.send('If you swear again im gonna tell on you');
             return;
         }
     }
