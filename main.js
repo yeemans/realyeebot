@@ -60,7 +60,7 @@ client.on('message', message => {
     }
 
     if (message.content.includes('fuck') || message.content.includes('shit') || 
-    message.content.includes('bitch')) {
+    message.content.includes('bitch') && !(message.author.bot)) {
         message.channel.send('Please do not swear');
         return;
     }
