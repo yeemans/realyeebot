@@ -54,10 +54,15 @@ client.on('message', message => {
         message.channel.send('Nobody uses this channel');
         return;
     }
-
+    if (message.content.contains('fuck you')) {
+        message.channel.send('fuck you too');
+        return;
+    }
+    
     if (message.content.includes('fuck') || message.content.includes('shit') || 
     message.content.includes('bitch')) {
         message.channel.send('Please do not swear');
+        return;
     }
 
     if (message.content.includes('yee') && !(message.content.includes('-'))) {
