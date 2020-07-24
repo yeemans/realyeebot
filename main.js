@@ -22,10 +22,7 @@ client.once('ready', () => {
         console.log(guild.ownerID);
     })
 });
-client.on("guildMemberAdd", member => {
-    let guild = member.guild;
-    guild.defaultChannel.sendMessage(`Welcome ${member.user} to our Discord Server.  Please check out the FAQ channel for documentation and support to help you get started`).catch(console.error);
-  });
+
 
 client.on('message', message => {
     message.content = message.content.toLowerCase();
@@ -41,6 +38,7 @@ client.on('message', message => {
 
     if (message.content.includes('bruh') && message.author.bot == false) {
         message.channel.send('bruh');
+        if(!msg.author.bot) msg.author.send("bruh " + msg.author.id)
         return;
     }
 
