@@ -54,7 +54,7 @@ client.on('message', message => {
         message.channel.send('Nobody uses this channel');
         return;
     }
-    if (message.content.includes('fuck you')) {
+    if (message.content.includes('fuck you') && !(message.author.bot)) {
         message.channel.send('fuck you too');
         return;
     }
