@@ -102,6 +102,10 @@ client.on('message', async (message, member) => {
     if (message.content.includes('735621111781523516')) {
         message.channel.send( `<@${message.author.id}> stfu`);
     }
+    //when fresh talks about his room 
+    if (message.author.id == 163439672431869953 && message.content.includes('room')) {
+        message.channel.send('Your room smells');
+    }
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
