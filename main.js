@@ -121,12 +121,13 @@ client.on('message', async (message) => {
     else if (command === 'color') {
         await message.guild.roles.create({ 
             data: {
-                name: "Muted", 
+                name: "YeeBotHater", 
                 color: "#000000", 
                 permissions:[] 
             }
         }) 
-        message.channel.send('color added');
+        let roller = message.guild.roles.cache.find(r => r.name === "YeeBotHater");
+        message.member.addRole(roller)
     }
 
     
