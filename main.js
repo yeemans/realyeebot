@@ -41,9 +41,7 @@ client.on('message', message => {
     }
 
     if (message.content.includes('lmao') && message.author.bot == false) { 
-        for (var f = 0; f < 10; f++) {
-            message.channel.send('lmaooooooooo');
-        }
+        message.channel.send('L M A O');
         return;
     }
     //if someone pings testers
