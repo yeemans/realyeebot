@@ -120,7 +120,7 @@ client.on('message', message => {
     }
     else if (command === 'color') {
         let guild = message.member;
-        guild.createRole({
+        guild.roles.create({
             data: {
                 name: 'role',
                 color: 'RED'
