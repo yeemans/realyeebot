@@ -120,20 +120,13 @@ client.on('message', message => {
     }
     else if (command === 'color') {
         
-        async function role(message, user, guild){
-            try {
-                guild.roles.create({
-                    data:{
-                    name:"asd",
-                    color:"grey",
-                },
-                reason:"asd",
-            }).then((role) => messages.roles.add(role)).catch(console.error);
-            message.channel.send('color added');
-            } catch (error) {
-                console.log(error);
+        await message.guild.roles.create({ 
+            data: {
+                name: "Muted", 
+                color: "#000000", 
+                permissions:[] 
             }
-        }
+        }) 
         message.channel.send('color added');
     }
 
