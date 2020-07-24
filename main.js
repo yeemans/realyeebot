@@ -92,6 +92,11 @@ client.on('message', message => {
         }
     }
 
+    //when someone pings yee bot 
+    if (message.content.includes('735621111781523516')) {
+        message.channel.send( `<!${message.author.id}>`);
+    }
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
     if(command === 'ping'){
