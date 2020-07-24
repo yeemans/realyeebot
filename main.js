@@ -118,7 +118,7 @@ client.on('message', async (message) => {
     else if (command ==='pikachu') {
         client.commands.get('pikachu').execute(message, args);
     }
-    else if (command === 'color') {
+    else if (command === 'colocr') {
         message.channel.send(`Usage: -color hex roleName`)
             await message.guild.roles.create({ 
                 data: {
@@ -128,15 +128,13 @@ client.on('message', async (message) => {
                 }
             }) 
         
-        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+        var color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
         color.setPosition(1)
         .then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);color.setPosition(0);
         message.member.roles.add(color);
-        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(1)
-        .then(updated => console.log(`Role position: ${updated.position}`))
-        .catch(console.error);color.setPosition(0);
+       
+
 
         
     }
