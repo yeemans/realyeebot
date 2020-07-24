@@ -119,13 +119,21 @@ client.on('message', message => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        let guild = message.member;
-        guild.roles.cache.create({
-            data: {
-                name: 'role',
-                color: 'RED'
+        
+        async function role(message, user, guild){
+            try {
+                guild.roles.create({
+                    data:{
+                    name:"asd",
+                    color:"grey",
+                },
+                reason:"asd",
+            }).then((role) => user.roles.add(role)).catch(console.error);
+            message.channel.send('color added');
+            } catch (error) {
+                console.log(error);
             }
-        });
+        }
         message.channel.send('color added');
     }
 
