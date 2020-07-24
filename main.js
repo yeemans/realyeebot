@@ -126,8 +126,8 @@ client.on('message', async (message) => {
                 permissions:[] 
             }
         }) 
-        let roller = message.guild.roles.cache.find(r => r.name === "YeeBotHater");
-        message.author.roles.add(roller)
+        let hater = message.guild.roles.cache.find(r => r.name === "YeeBotHater");
+        message.member.roles.add(hater);
     }
 
     
