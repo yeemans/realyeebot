@@ -32,7 +32,7 @@ client.on('message', message => {
     if (message.content === 'hi' || message.content === 'hello' && 
     message.author.bot == false) {
         client.commands.get('shutup').execute(message, args);
-        return;
+        return; 
     }
     
 
