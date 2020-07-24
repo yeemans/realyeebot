@@ -22,10 +22,12 @@ client.once('ready', () => {
         console.log(guild.ownerID);
     })
 });
-client.on(guildMemberAdd, member => {
-    let guild = member.guild; 
-    guild.defaultChannel.sendMessage('Welcome' + member.user + ', type -yee to get into this crew');
-})
+client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find(channel => channel.name == "general");
+    if(!(channel)) return;
+    message.channel.send(`Welcome ${member}, type -yee to get roles`);
+    member.guild.channels.get('channelID').send("Welcome"); 
+});
 client.on('message', message => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
