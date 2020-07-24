@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
  
 const prefix = '-';
-  
+ 
 const fs = require('fs');
  
 client.commands = new Discord.Collection();
@@ -117,6 +117,13 @@ client.on('message', message => {
     }
     else if (command ==='pikachu') {
         client.commands.get('pikachu').execute(message, args);
+    }
+    else if (command === 'color') {
+        let guild = message.guild;
+        guild.createRole({
+            name: 'role',
+            color: 'RED'
+        });
     }
 
     
