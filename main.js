@@ -39,7 +39,7 @@ client.on('message', message => {
     if (message.content.includes('bruh') && message.author.bot == false) {
         message.channel.send('bruh');
         if (!(message.author.bot)) {
-            message.author.send("bruh " + message.author.id);
+            message.author.send("bruh");
         }
         return;
     }
@@ -50,7 +50,9 @@ client.on('message', message => {
     }
     //if someone pings testers
     if (message.content.includes('<@&551884063967805440')) {
-        message.channel.send('You will get tested soon'); 
+        if(!(message.author.bot)) {
+            message.author.send('You will be tested soon.');
+        }
         return;
     }
 
@@ -66,7 +68,7 @@ client.on('message', message => {
     if (message.content.includes('fuck') || message.content.includes('shit') || 
     message.content.includes('bitch')) {
         if (!(message.author.bot)) {
-            message.channel.send('Please do not swear');
+            message.channel.send('Please do not swear' + '@&' + message.author.id);
             return;
         }
     }
