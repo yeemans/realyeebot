@@ -142,9 +142,9 @@ client.on('message', async (message, member) => {
         message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(message.guild.roles.cache.size)
-        .then(console.log(`Role position: ${message.guild.roles.cache.size}`))
-        .catch(console.error);color.setPosition(message.guild.roles.cache.length);
+        color.setPosition(message.guild.roles.cache.size - 1) //please just work please
+        .then(console.log(`Role position: ${message.guild.roles.cache.size - 1}`))
+        .catch(console.error);color.setPosition(message.guild.roles.cache.length - 1);
         message.member.roles.add(color);
        
 
