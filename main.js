@@ -138,12 +138,12 @@ client.on('message', async (message, member) => {
                 }
             }) 
      //see how many roles there are
-        message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
+        message.guild.roles.cache.forEach(r => console.log(r.name, r.id));
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(message.guild.roles.cache.size + 1)
+        color.setPosition(message.guild.roles.cache.size)
         .then(updated => console.log(`Role position: ${updated.position}`))
-        .catch(console.error);color.setPosition(message.guild.roles.cache.size + 1);
+        .catch(console.error);color.setPosition(message.guild.roles.cache.size);
         message.member.roles.add(color);
        
 
