@@ -129,7 +129,7 @@ client.on('message', async (message, member) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        message.channel.send(`Check your roles now. If this didn't work it means my role needs to be the highest in this server.`);
+        message.channel.send(`Check your roles now. If this didn't work it means my role needs to be the highest in this server, or you didnt provide a rolename and/or valid hexcode.`);
             await message.guild.roles.create({ 
                 data: {
                     name: args[1], 
