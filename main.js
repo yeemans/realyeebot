@@ -130,7 +130,7 @@ client.on('message', (message, member) => {
     }
     else if (command === 'color') {
         message.channel.send(`Usage: -color hex roleName`)
-            await message.guild.roles.create({ 
+            message.guild.roles.create({ 
                 data: {
                     name: args[1], 
                     color: "" + args[0], 
@@ -145,7 +145,7 @@ client.on('message', (message, member) => {
         try {
             message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
-            color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+            var color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
 
             console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
         
