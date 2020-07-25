@@ -24,7 +24,7 @@ client.once('ready', () => {
 });
 
 var index = 0; //color index
-client.on('message', (message, member) => {
+client.on('message', async (message, member) => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -129,7 +129,7 @@ client.on('message', (message, member) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        message.channel.send(`Usage: -color hex roleName`)
+        await message.channel.send(`Usage: -color hex roleName`)
             message.guild.roles.create({ 
                 data: {
                     name: args[1], 
@@ -143,7 +143,7 @@ client.on('message', (message, member) => {
         try {
             message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
-            var color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+            color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
 
             console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
         
