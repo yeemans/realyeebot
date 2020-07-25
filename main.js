@@ -139,19 +139,19 @@ client.on('message', async (message, member) => {
                 }
             }) 
      //see how many roles there are
-     
-        message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
+        try {
+            message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
-        color = message.guild.roles.cache.find(r => r.name === "" + args[1])
-        .then(console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`))
-        .catch(console.error)
-        message.channel.send("Something went wrong. Maybe the bot needs a role higher on the permission hierarchy?");
+            color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+    
+            console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
         
-        message.member.roles.add(color);
-       
-
-
         
+            message.member.roles.add(color);
+        }
+        catch(err) {
+            message.channel.send("Something went wrong, the bot probably doesn't have high enough permissions");
+        }
     }
 
     
