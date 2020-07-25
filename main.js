@@ -24,7 +24,7 @@ client.once('ready', () => {
 });
 
 var index = 0; //color index
-client.on('message', async (message, member) => {
+client.on('message', (message, member) => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -139,17 +139,22 @@ client.on('message', async (message, member) => {
                 }
             }) 
      //see how many roles there are
-     
-        message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
+        function catchError(message) {
+            message.channel.send('Something went wrong, yee bot likely needs a higher role for this');
+        }
+        try {
+            message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
-        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+            color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
 
-        console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
+            console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
         
-        message.member.roles.add(color);
-        //if role was not added, send a message.
-        if (!(message.member.roles.find(r => r.name === args[1]))) {
-            message.channel.send("something went wrong, perhaps the bot needs a higher role?");
+            message.member.roles.add(color);
+            //if role was not added, send a message.
+        }
+
+        catch (err) {
+            catchError();
         }
 
        
