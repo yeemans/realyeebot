@@ -1,5 +1,3 @@
-
-  
 const Discord = require('discord.js');
 const client = new Discord.Client();
  
@@ -148,12 +146,12 @@ client.on('message', async (message, member) => {
         }
          
         message.guild.roles.cache.forEach(iterate);
-        console.log(role_count);
+        console.log('Roles: ${role_count}`);
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(10); //testing
-        console.log(`Role position: ${color.position}`);
-        //.catch(console.error);color.setPosition(role_count);
+        color.setPosition(role_count)
+        .then(updated => console.log(`Role position: ${updated.position}`))
+        .catch(console.error);color.setPosition(role_count);
         message.member.roles.add(color);
        
 
@@ -164,4 +162,4 @@ client.on('message', async (message, member) => {
     
 });
 
-
+client.login(process.env.token);
