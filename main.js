@@ -138,7 +138,7 @@ client.on('message', async (message, member) => {
                 }
             }) 
      //see how many roles there are
-        do message.guild.cache.roles.forEach(r => console.log(r.name, r.id))
+        do {message.guild.cache.roles.forEach(r => console.log(r.name, r.id))}
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
         color.setPosition(message.guild.roles.cache.size + 1)
