@@ -129,8 +129,8 @@ client.on('message', async (message, member) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        await message.channel.send(`Usage: -color hex roleName`)
-            message.guild.roles.create({ 
+        message.channel.send(`For this to work, my role needs to be the highest`);
+            await message.guild.roles.create({ 
                 data: {
                     name: args[1], 
                     color: "" + args[0], 
@@ -139,20 +139,22 @@ client.on('message', async (message, member) => {
                 }
             }) 
      //see how many roles there are
+         
+        message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
+        
+        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+        //color.setPosition(message.guild.roles.cache.size - 1)
+        console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
+        //.catch(console.error);color.setPosition(message.guild.roles.cache.length);
+        
+        message.member.roles.add(color);
+        //color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+        //color.setPosition(message.guild.roles.cache.size - 1)
+        //console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size - 1}`)
+       
+
 
         
-            message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
-          try {
-            console.log(`Role position: ${message.guild.roles.cache.find(r => r.name === "" + args[1]).position}, Number of roles: ${message.guild.roles.cache.size}`)
-        
-            message.member.roles.add(message.guild.roles.cache.find(r => r.name === "" + args[1]));
-            //if role was not added, send a message.
-          }
-
-        catch (err) {
-            console.log(err);
-            message.channel.send("Bruh, yee bot doesn't have a high enough role.");
-        }
     }
 
     
