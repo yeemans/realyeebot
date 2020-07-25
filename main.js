@@ -130,26 +130,30 @@ client.on('message', async (message, member) => {
     }
     else if (command === 'color') {
         message.channel.send(`Usage: -color hex roleName`)
-            message.guild.roles.create({ 
+            await message.guild.roles.create({ 
                 data: {
                     name: args[1], 
                     color: "" + args[0], 
-                    permissions:[],
-                    position: message.guild.roles.cache.size - 1
+                    permissions:[] 
                 }
             }) 
      //see how many roles there are
-            message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
+     
+        message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
-            var color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-    
-            console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
+        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+        color.setPosition(message.guild.roles.cache.size) //please just work please
+        .then(console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`))
+        .catch(console.error);
+        message.channsel.send("Something went wrong. Maybe the bot needs a role higher on the server");
         
-            .then(message.member.roles.add(color))
-            .catch(message.channel.send("Something went wrong, the bot probably doesn't have a high enough role."))
-    
+        message.member.roles.add(color);
+       
+
+
         
     }
+
     
 });
 
