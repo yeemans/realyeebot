@@ -139,7 +139,7 @@ client.on('message', async (message, member) => {
             }) 
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(100)
+        color.setPosition(message.guild.roles.size + 1)
         .then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);color.setPosition(message.guild.roles.size + 1);
         message.member.roles.add(color);
