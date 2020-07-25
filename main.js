@@ -134,7 +134,7 @@ client.on('message', async (message, member) => {
                 data: {
                     name: args[1], 
                     color: "" + args[0], 
-                    permissions:[] 
+                    permissions:[],
                     position: message.guild.roles.cache.size - 1
                 }
             }) 
