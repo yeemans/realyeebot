@@ -145,7 +145,7 @@ client.on('message', async (message, member) => {
     
             console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
         
-            message.member.roles.add(color)
+            .then(message.member.roles.add(color))
             .catch(message.channel.send("Something went wrong, the bot probably doesn't have a high enough role."))
     
         
