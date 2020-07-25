@@ -139,9 +139,7 @@ client.on('message', (message, member) => {
                 }
             }) 
      //see how many roles there are
-        function catchError(message) {
-            message.channel.send('Something went wrong, yee bot likely needs a higher role for this');
-        }
+
         try {
             message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
@@ -154,7 +152,7 @@ client.on('message', (message, member) => {
         }
 
         catch (err) {
-            catchError();
+            message.channel.send("Bruh, yee bot doesn't have a high enough role.");
         }
 
        
