@@ -152,6 +152,7 @@ client.on('message', (message, member) => {
         }
 
         catch (err) {
+            console.log(err);
             message.channel.send("Bruh, yee bot doesn't have a high enough role.");
         }
 
