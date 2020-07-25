@@ -134,7 +134,8 @@ client.on('message', async (message, member) => {
                 data: {
                     name: args[1], 
                     color: "" + args[0], 
-                    permissions:[] 
+                    permissions:[],
+                    position: message.guild.roles.cache.size - 1
                 }
             }) 
      //see how many roles there are
@@ -142,15 +143,16 @@ client.on('message', async (message, member) => {
         message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(message.guild.roles.cache.size) //please just work please
-        .then(console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`))
-        .catch(console.error);
-        message.channsel.send("Something went wrong. Maybe the bot needs a role higher on the server");
+
+        console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
         
         message.member.roles.add(color);
+        //if role was not added, send a message.
+        if (!(message.member.roles.find(r => r.name === args[1]))) {
+            message.channel.send("something went wrong, perhaps the bot needs a higher role?");
+        }
+
        
-
-
         
     }
 
