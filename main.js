@@ -151,7 +151,7 @@ client.on('message', async (message, member) => {
         console.log(role_count);
         
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        color.setPosition(role_count)
+        color.setPosition(10); //testing
         .then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);color.setPosition(role_count);
         message.member.roles.add(color);
