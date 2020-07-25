@@ -134,21 +134,20 @@ client.on('message', async (message, member) => {
                 data: {
                     name: args[1], 
                     color: "" + args[0], 
-                    permissions:[],
-                    position: message.guild.roles.cache.size - 1
+                    permissions:[] 
                 }
             }) 
      //see how many roles there are
      
         message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
-        try {
-        color = message.guild.roles.cache.find(r => r.name === "" + args[1])
+        
+        color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
+        color.setPosition(message.guild.roles.cache.size) //please just work please
         .then(console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`))
-        .then(message.member.roles.add(color));
-        } 
-     catch(err) {
-      message.channel.send("Something went wrong. Maybe Yee Bot doesn't have a high enough role?")
-     }
+        .catch(console.error);
+        message.channsel.send("Something went wrong. Maybe the bot needs a role higher on the permission hierarchy?");
+        
+        message.member.roles.add(color);
        
 
 
