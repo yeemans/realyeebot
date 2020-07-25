@@ -142,12 +142,10 @@ client.on('message', async (message, member) => {
 
         
             message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
-        
-          var color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
           try {
-            console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
+            console.log(`Role position: ${message.guild.roles.cache.find(r => r.name === "" + args[1]).position}, Number of roles: ${message.guild.roles.cache.size}`)
         
-            message.member.roles.add(color);
+            message.member.roles.add(message.guild.roles.cache.find(r => r.name === "" + args[1]));
             //if role was not added, send a message.
           }
 
@@ -155,9 +153,6 @@ client.on('message', async (message, member) => {
             console.log(err);
             message.channel.send("Bruh, yee bot doesn't have a high enough role.");
         }
-
-       
-        
     }
 
     
