@@ -24,6 +24,10 @@ client.once('ready', () => {
 });
 
 var index = 0; //color index
+client.on('guildMemberAdd', member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === "general")
+    welcomeChannel.send('Hello stranger. Make sure to type -yee to get your roles')
+})
 client.on('message', async (message, member) => {
     message.content = message.content.toLowerCase();
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -37,7 +41,7 @@ client.on('message', async (message, member) => {
     
 
     if (message.content.includes('bruh') && message.author.bot == false) {
-        
+        message.channel.send('bruh');
         if (!(message.author.bot)) {
             message.author.send("bruh");
         }
@@ -45,7 +49,7 @@ client.on('message', async (message, member) => {
     }
 
     if (message.content.includes('lmao') && message.author.bot == false) { 
-        message.author.send('L M A O');
+        message.channel.send('L M A O');
         return;
     }
     //if someone pings testers
@@ -61,7 +65,7 @@ client.on('message', async (message, member) => {
         return;
     }
     if (message.content.includes('fuck you') && !(message.author.bot)) {
-    
+        message.channel.send('dont say that pls');
         if (message.guild.me.hasPermission('MANAGE_NICKNAMES')) {
             message.member.setNickname('pphead'); 
         }
@@ -75,14 +79,14 @@ client.on('message', async (message, member) => {
     message.content.includes('bitch') || message.content.includes('damn') ||
     message.content.includes('cunt')) {
         if (!(message.author.bot)) {
-            message.author.send(`Please do not swear <@${message.author.id} I will ban you>`);
+            message.channel.send(`Please do not swear <@${message.author.id}>`);
+            message.author.send('If you swear again im gonna ban you');
             return;
         }
     }
 
     if (message.content.includes('yee') && !(message.content.includes('-'))) {
         message.channel.send('Y E E E E E E E E'); 
-        message.author.send('y e e e e e e e e e e e e e e e e e e e');
         return;
     }
 
@@ -94,7 +98,7 @@ client.on('message', async (message, member) => {
     if (message.content.includes('pp') || message.content.includes('cock') || 
     message.content.includes('penis')) {
         if (!(message.author.bot)) {
-            message.author.send(`Penis <@${message.author.id}>`);
+            message.channel.send(`Penis <@${message.author.id}>`);
         }
     }
 
@@ -129,7 +133,7 @@ client.on('message', async (message, member) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'color') {
-        message.channel.send(`Check your roles now. If this didn't work it means my role needs to be the highest in this server, or you didnt provide a rolename and/or valid hexcode.`);
+        message.channel.send(`For this to work, my role needs to be the highest`);
             await message.guild.roles.create({ 
                 data: {
                     name: args[1], 
@@ -141,23 +145,14 @@ client.on('message', async (message, member) => {
      //see how many roles there are
          
         message.guild.roles.cache.forEach(r => console.log(r.name, r.id))
-        
         color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        //color.setPosition(message.guild.roles.cache.size - 1)
         console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size}`)
-        //.catch(console.error);color.setPosition(message.guild.roles.cache.length);
-        
-        message.member.roles.add(color);
-        //color = message.guild.roles.cache.find(r => r.name === "" + args[1]);
-        //color.setPosition(message.guild.roles.cache.size - 1)
-        //console.log(`Role position: ${color.position}, Number of roles: ${message.guild.roles.cache.size - 1}`)
-       
-
-
-        
+        message.member.roles.add(color); 
     }
 
     
 });
+
+
 
 client.login(process.env.token);
