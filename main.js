@@ -37,7 +37,7 @@ client.on('message', async (message, member) => {
     
 
     if (message.content.includes('bruh') && message.author.bot == false) {
-        message.channel.send('bruh');
+        
         if (!(message.author.bot)) {
             message.author.send("bruh");
         }
@@ -45,7 +45,7 @@ client.on('message', async (message, member) => {
     }
 
     if (message.content.includes('lmao') && message.author.bot == false) { 
-        message.channel.send('L M A O');
+        message.author.send('L M A O');
         return;
     }
     //if someone pings testers
@@ -61,7 +61,7 @@ client.on('message', async (message, member) => {
         return;
     }
     if (message.content.includes('fuck you') && !(message.author.bot)) {
-        message.channel.send('dont say that pls');
+    
         if (message.guild.me.hasPermission('MANAGE_NICKNAMES')) {
             message.member.setNickname('pphead'); 
         }
@@ -75,14 +75,14 @@ client.on('message', async (message, member) => {
     message.content.includes('bitch') || message.content.includes('damn') ||
     message.content.includes('cunt')) {
         if (!(message.author.bot)) {
-            message.channel.send(`Please do not swear <@${message.author.id}>`);
-            message.author.send('If you swear again im gonna ban you');
+            message.author.send(`Please do not swear <@${message.author.id} I will ban you>`);
             return;
         }
     }
 
     if (message.content.includes('yee') && !(message.content.includes('-'))) {
         message.channel.send('Y E E E E E E E E'); 
+        message.author.send('y e e e e e e e e e e e e e e e e e e e');
         return;
     }
 
@@ -94,7 +94,7 @@ client.on('message', async (message, member) => {
     if (message.content.includes('pp') || message.content.includes('cock') || 
     message.content.includes('penis')) {
         if (!(message.author.bot)) {
-            message.channel.send(`Penis <@${message.author.id}>`);
+            message.author.send(`Penis <@${message.author.id}>`);
         }
     }
 
