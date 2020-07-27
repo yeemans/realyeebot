@@ -41,7 +41,6 @@ client.on('message', async (message, member) => {
     
 
     if (message.content.includes('bruh') && message.author.bot == false) {
-        message.channel.send('bruh');
         if (!(message.author.bot)) {
             message.author.send("bruh");
         }
@@ -49,7 +48,7 @@ client.on('message', async (message, member) => {
     }
 
     if (message.content.includes('lmao') && message.author.bot == false) { 
-        message.channel.send('L M A O');
+        message.author.send('L M A O');
         return;
     }
     //if someone pings testers
@@ -65,7 +64,7 @@ client.on('message', async (message, member) => {
         return;
     }
     if (message.content.includes('fuck you') && !(message.author.bot)) {
-        message.channel.send('dont say that pls');
+        //message.channel.send('dont say that pls');
         if (message.guild.me.hasPermission('MANAGE_NICKNAMES')) {
             message.member.setNickname('pphead'); 
         }
@@ -79,7 +78,7 @@ client.on('message', async (message, member) => {
     message.content.includes('bitch') || message.content.includes('damn') ||
     message.content.includes('cunt')) {
         if (!(message.author.bot)) {
-            message.channel.send(`Please do not swear <@${message.author.id}>`);
+            //message.channel.send(`Please do not swear <@${message.author.id}>`);
             message.author.send('If you swear again im gonna ban you');
             return;
         }
@@ -91,24 +90,25 @@ client.on('message', async (message, member) => {
     }
 
     if (message.content.includes('gay') && !(message.author.bot)) {
-        message.channel.send(`We do not tolerate homophobic slurs in this server <@${message.author.id}>`);
+        //message.channel.send(`We do not tolerate homophobic slurs in this server <@${message.author.id}>`);
+        message.author.send(`We do not tolerate homophobic slurs in this server <@${message.author.id}>`);
         return;
     }
 
     if (message.content.includes('pp') || message.content.includes('cock') || 
     message.content.includes('penis')) {
         if (!(message.author.bot)) {
-            message.channel.send(`Penis <@${message.author.id}>`);
+            message.author.send(`Penis <@${message.author.id}>`);
         }
     }
 
     //when someone pings yee bot 
     if (message.content.includes('735621111781523516')) {
-        message.channel.send( `<@${message.author.id}> stfu`);
+        message.author.send( `<@${message.author.id}> stfu`);
     }
     //when fresh talks about his room 
     if (message.author.id == 163439672431869953 && message.content.includes('room')) {
-        message.channel.send('Your room smells');
+        message.author.send('Your room smells');
     }
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
