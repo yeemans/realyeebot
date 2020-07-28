@@ -27,7 +27,7 @@ var index = 0; //color index
 client.on('guildMemberAdd', member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === "general")
     welcomeChannel.send('https://pbs.twimg.com/profile_images/504715443479670784/fauyuPDy_400x400.png')
-    welcomeChannel.send('<@${message.author.id}>')
+    welcomeChannel.send(`<@${message.author.id}>`)
 })
 client.on('message', async (message, member) => {
     message.content = message.content.toLowerCase();
