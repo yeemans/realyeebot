@@ -134,7 +134,7 @@ client.on('message', async (message, member) => {
         client.commands.get('pikachu').execute(message, args);
     }
     else if (command === 'incel') {
-        client.command.get('incel').execute(message, args);
+        client.commands.get('incel').execute(message, args);
     }
     else if (command === 'color') {
         message.channel.send(`For this to work, my role needs to be the highest`);
