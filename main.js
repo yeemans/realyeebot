@@ -29,7 +29,7 @@ client.on('guildMemberAdd', member => {
     welcomeChannel.send('https://pbs.twimg.com/profile_images/504715443479670784/fauyuPDy_400x400.png')
     welcomeChannel.send(`<@${member.id}>`)
     //adding a role to the new user 
-    newcomer = member.guild.roles.cache.find(r => r.name === "newcomer");
+    var newcomer = member.guild.roles.cache.find(r => r.name === "newcomer");
     if (!(newcomer)) {
         member.guild.roles.create({ 
             data: {
