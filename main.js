@@ -40,7 +40,7 @@ client.on('guildMemberAdd', member => {
             }
         }) 
     }
-    newcomer = member.guild.roles.cache.find(r => r.name === "newcomer");
+    newcomer = member.guild.roles.cache.find(r => r.name === "F C G G U E S T");
     member.roles.add(newcomer)
 })
 client.on('message', async (message, member) => {
