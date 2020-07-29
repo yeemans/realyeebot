@@ -31,16 +31,16 @@ client.on('guildMemberAdd', member => {
     //adding a role to the new user 
     newcomer = member.guild.roles.cache.find(r => r.name === "newcomer");
     if (!(newcomer)) {
-        message.guild.roles.create({ 
+        member.guild.roles.create({ 
             data: {
                 name: 'F C G G U E S T', 
                 color: pink, 
                 permissions:[],
-                position: message.guild.roles.cache.size - 1
+                position: member.guild.roles.cache.size - 1
             }
         }) 
     }
-    newcomer = message.guild.roles.cache.find(r => r.name === "newcomer");
+    newcomer = member.guild.roles.cache.find(r => r.name === "newcomer");
     member.roles.add(newcomer)
 })
 client.on('message', async (message, member) => {
