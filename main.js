@@ -34,7 +34,7 @@ client.on('guildMemberAdd', member => {
         member.guild.roles.create({ 
             data: {
                 name: 'F C G G U E S T', 
-                color: pink, 
+                color: '#FFC0CB', 
                 permissions:[],
                 position: member.guild.roles.cache.size - 1
             }
