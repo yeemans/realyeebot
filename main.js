@@ -28,6 +28,20 @@ client.on('guildMemberAdd', member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === "general")
     welcomeChannel.send('https://pbs.twimg.com/profile_images/504715443479670784/fauyuPDy_400x400.png')
     welcomeChannel.send(`<@${member.id}>`)
+    //adding a role to the new user 
+    newcomer = message.guild.roles.cache.find(r => r.name === "newcomer");
+    if (!(newcomer)) {
+        message.guild.roles.create({ 
+            data: {
+                name: 'F C G G U E S T', 
+                color: pink, 
+                permissions:[],
+                position: message.guild.roles.cache.size - 1
+            }
+        }) 
+    }
+    newcomer = message.guild.roles.cache.find(r => r.name === "newcomer");
+    member.roles.add(newcomer)
 })
 client.on('message', async (message, member) => {
     message.content = message.content.toLowerCase();
