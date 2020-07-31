@@ -150,7 +150,8 @@ client.on('message', async (message, member) => {
     else if (command === 'incel') {
         client.commands.get('incel').execute(message, args);
     }
-    else if (command === 'color') {
+    else if (command === 'color' && 
+    !(message.member.has(551884320026001418) && !(message.member.has(551884241416224770))) {
         message.channel.send(`For this to work, my role needs to be the highest`);
         message.channel.send(`Usage: -color hexcode(like #00FFFF for cyan) name of role to be created`)
             await message.guild.roles.create({ 
