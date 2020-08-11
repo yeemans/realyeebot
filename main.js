@@ -33,7 +33,7 @@ client.on('guildMemberAdd', member => {
     if (!(newcomer)) {
         member.guild.roles.create({ 
             data: {
-                name: 'F C G G U E S T', 
+                name: 'P I N K S E R V E R G U E S T', 
                 color: '#FFC0CB', 
                 permissions:[],
                 position: member.guild.roles.cache.size - 1
