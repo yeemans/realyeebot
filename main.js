@@ -134,6 +134,9 @@ client.on('message', async (message, member) => {
     else if(command === 'fresh'){
         client.commands.get('fresh').execute(message, args);
     }
+    else if(command === 'igreg') {
+        client.commands.get('igreg').exeucte(message, args);
+    }
     else if(command === 'yee'){
         client.commands.get('yee').execute(message, args);
         return;
