@@ -135,7 +135,7 @@ client.on('message', async (message, member) => {
         client.commands.get('fresh').execute(message, args);
     }
     else if(command === 'igreg') {
-        client.commands.get('igreg').execute(message, args);
+        client.commands.get('igreg').exeucte(message, args);
     }
     else if(command === 'yee'){
         client.commands.get('yee').execute(message, args);
@@ -152,6 +152,9 @@ client.on('message', async (message, member) => {
     }
     else if (command === 'incel') {
         client.commands.get('incel').execute(message, args);
+    }
+    else if (command === 'shit') {
+        message.channel.send('https://imgur.com/gallery/mTFU9fJ');
     }
 
     else if (command === 'color' && !(message.member.roles.cache.find(r => r.name === "Wannabes")) &&
