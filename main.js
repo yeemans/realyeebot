@@ -95,7 +95,6 @@ client.on('message', async (message, member) => {
         if (!(message.author.bot)) {
             //message.channel.send(`Please do not swear <@${message.author.id}>`);
             message.author.send('If you swear again im gonna ban you');
-            return;
         }
     }
 
