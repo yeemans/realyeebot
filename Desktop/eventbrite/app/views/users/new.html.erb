@@ -1,0 +1,21 @@
+<h2>Sign up</h2>
+<% if user_signed_in? %>
+  <%= current_user.name %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete%>
+<% else %>
+  <p> GO sign in </p>
+<% end %>
+<%= form_for @User, url: { action: "create" } do |f| %>
+  <%# render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+  <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+<% session[:name] = User.name %>
+<%=link_to("Login", user_session_path)%>

@@ -1,0 +1,5 @@
+<br/>
+<br/>
+<%= user_signed_in? %> 
+<p> You are signed in as <%= current_user.name %> </p>
+<%= link_to "Sign In", user_session_path, method: :post%>
